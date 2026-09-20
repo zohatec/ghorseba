@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>GhorSheba (ঘরসেবা) — Trusted Home Services in Bangladesh</title>
+<meta name="description" content="A bilingual home-services booking platform concept for Bangladesh — AC servicing, electrician, plumber, cleaning, pest control, interior design, painting, CCTV, solar, moving and appliance repair." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%94%A7%3C/text%3E%3C/svg%3E" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Baloo+Da+2:wght@500;600;700&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/animations.css" />
+</head>
+<body>
+<a class="skip-link" href="#main" data-i18n="skip_link">Skip to main content</a>
+<div id="toast-container" aria-live="polite"></div>
+
+<!-- ============================ HEADER ============================ -->
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="#top">
+      <span class="brand__mark" aria-hidden="true"><i class="fa-solid fa-house-chimney"></i></span>
+      <span class="brand__name" data-i18n="brand_name">GhorSheba</span>
+    </a>
+
+    <nav class="nav">
+      <button class="nav-toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="primary-nav">
+        <span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span>
+      </button>
+      <div class="nav__panel" id="primary-nav">
+        <div class="nav__links">
+          <a href="#services" data-i18n="nav_services">Services</a>
+          <a href="#how" data-i18n="nav_how">How it works</a>
+          <a href="#estimator" data-i18n="nav_pricing">Estimate a price</a>
+          <a href="#areas" data-i18n="nav_areas">Service areas</a>
+          <a href="#reviews" data-i18n="nav_reviews">Reviews</a>
+          <a href="#faq" data-i18n="nav_faq">FAQ</a>
+          <a href="#contact" data-i18n="nav_contact">Contact</a>
+        </div>
+        <div class="nav__actions">
+          <button class="lang-toggle" aria-label="Switch language">
+            <i class="fa-solid fa-globe" aria-hidden="true"></i>
+            <span class="lang-toggle__label">বাংলা</span>
+          </button>
+          <a class="btn btn--primary btn--sm" href="#booking" data-i18n="nav_book_btn">Book a service</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============================ HERO ============================ -->
+  <section class="hero" id="top">
+    <div class="container">
+      <div class="hero__content">
+        <p class="hero__eyebrow" data-i18n="services_kicker">Bangladesh's home-service platform</p>
+        <h1 class="hero__title">
+          <span data-i18n="hero_title_line1">One home.</span>
+          <span data-i18n="hero_title_line2">Every service, one call away.</span>
+        </h1>
+        <p class="hero__subtitle" data-i18n="hero_subtitle">
+          Verified technicians, transparent Taka pricing and booking in under two minutes — for everything from a leaking tap to a full interior fit-out.
+        </p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#booking" data-i18n="hero_cta_book">Book a service</a>
+          <a class="btn btn--outline" href="#services" data-i18n="hero_cta_services">See all services</a>
+        </div>
+        <ul class="hero__trust">
+          <li><i class="fa-solid fa-shield-halved" aria-hidden="true"></i><span data-i18n="hero_trust_1">NID-verified technicians</span></li>
+          <li><i class="fa-solid fa-tags" aria-hidden="true"></i><span data-i18n="hero_trust_2">Upfront BDT pricing</span></li>
+          <li><i class="fa-solid fa-wallet" aria-hidden="true"></i><span data-i18n="hero_trust_3">Cash, bKash &amp; Nagad</span></li>
+        </ul>
+
+        <div class="hero__stats-strip">
+          <div class="stat">
+            <strong><span data-count-to="450" data-count-suffix="+">0</span></strong>
+            <span data-i18n="hero_stats_1_label">verified technicians</span>
+          </div>
+          <div class="stat">
+            <strong><span data-count-to="5">0</span></strong>
+            <span data-i18n="hero_stats_2_label">cities covered</span>
+          </div>
+          <div class="stat">
+            <strong><span data-count-to="4.8" data-count-decimals="1">0</span></strong>
+            <span data-i18n="hero_stats_3_label">average rating</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__visual">
+        <div class="hero__accent" aria-hidden="true"></div>
+        <div class="hero__frame">
+          <img src="https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg?auto=compress&cs=tinysrgb&w=900&h=900&dpr=1"
+               alt="An electrician carefully working on a home circuit breaker panel with colour-coded wires" width="460" height="460" />
+        </div>
+        <div class="hero__stat-badge">
+          <strong><span data-count-to="5000" data-count-suffix="+">0</span></strong>
+          <span data-i18n="hero_stat_badge_label">bookings completed</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ SERVICES ============================ -->
+  <section class="section section--alt" id="services">
+    <div class="container">
+      <div class="section__head">
+        <p class="section__kicker" data-i18n="services_kicker">What we do</p>
+        <h2 data-i18n="services_title">Eleven services, one platform</h2>
+        <p data-i18n="services_sub">Pick a service to see indicative pricing and request a technician — no back-and-forth phone calls needed.</p>
+      </div>
+      <div class="services-grid" id="services-grid"><!-- rendered by main.js --></div>
+    </div>
+  </section>
+
+  <!-- ============================ HOW IT WORKS ============================ -->
+  <section class="section" id="how">
+    <div class="container">
+      <div class="section__head section__head--center">
+        <p class="section__kicker" data-i18n="how_kicker">The process</p>
+        <h2 data-i18n="how_title">Booking takes four steps</h2>
+        <p data-i18n="how_sub">From choosing a service to a completed job, here's the whole journey.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <span class="step__num">1</span>
+          <h3 data-i18n="how_1_title">Choose a service</h3>
+          <p data-i18n="how_1_desc">Pick from AC, electrical, plumbing, cleaning and more — see the price range up front.</p>
+        </div>
+        <div class="step">
+          <span class="step__num">2</span>
+          <h3 data-i18n="how_2_title">Share time &amp; address</h3>
+          <p data-i18n="how_2_desc">Tell us your area and a convenient slot. We match you with a nearby technician.</p>
+        </div>
+        <div class="step">
+          <span class="step__num">3</span>
+          <h3 data-i18n="how_3_title">Get confirmed</h3>
+          <p data-i18n="how_3_desc">You'll get the technician's name, photo and phone number before they arrive.</p>
+        </div>
+        <div class="step">
+          <span class="step__num">4</span>
+          <h3 data-i18n="how_4_title">Pay after the job</h3>
+          <p data-i18n="how_4_desc">Pay in cash, bKash, Nagad or Rocket only once the work is done to your satisfaction.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ PRICE ESTIMATOR ============================ -->
+  <section class="section section--alt" id="estimator">
+    <div class="container">
+      <div class="estimator reveal">
+        <div class="estimator__copy">
+          <p class="section__kicker" data-i18n="estimator_kicker">Quick estimate</p>
+          <h2 data-i18n="estimator_title">Get a ballpark price in seconds</h2>
+          <p data-i18n="estimator_sub">This calculator reads live from our service catalogue (data/services.json) and multiplies by quantity — a good example of the site fetching and using real data.</p>
+          <p class="estimator__disclaimer" data-i18n="estimator_disclaimer">Prices are indicative, for demonstration only, and may vary by area, condition and material cost.</p>
+        </div>
+        <div>
+          <form class="estimator-form" id="estimator-form">
+            <div class="estimator-form__row">
+              <div class="field">
+                <label for="estimator-service" data-i18n="estimator_select_label">Service</label>
+                <select id="estimator-service" required></select>
+              </div>
+              <div class="field">
+                <label for="estimator-qty" data-i18n="estimator_qty_label">Quantity / units</label>
+                <input type="number" id="estimator-qty" min="1" value="1" required />
+              </div>
+            </div>
+            <button class="btn btn--primary btn--block" type="submit" data-i18n="estimator_button">Calculate estimate</button>
+          </form>
+          <div class="estimator-result" id="estimator-result"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ WHY CHOOSE US ============================ -->
+  <section class="section section--navy">
+    <div class="container">
+      <div class="section__head section__head--center" style="margin-inline:auto;">
+        <p class="section__kicker" data-i18n="why_kicker">Why GhorSheba</p>
+        <h2 data-i18n="why_title">Built around trust, not just tasks</h2>
+        <p data-i18n="why_sub">The details that make booking a stranger into your home feel safe.</p>
+      </div>
+    </div>
+    <div class="feature-grid">
+      <div class="feature-card"><i class="fa-solid fa-id-card" aria-hidden="true"></i><h3 data-i18n="why_1_title">Verified technicians</h3><p data-i18n="why_1_desc">Every technician's NID and address are checked before they join the platform.</p></div>
+      <div class="feature-card"><i class="fa-solid fa-tags" aria-hidden="true"></i><h3 data-i18n="why_2_title">Transparent pricing</h3><p data-i18n="why_2_desc">You see an estimate before booking and a final quote before work begins — no surprises.</p></div>
+      <div class="feature-card"><i class="fa-solid fa-bolt-lightning" aria-hidden="true"></i><h3 data-i18n="why_3_title">Fast response</h3><p data-i18n="why_3_desc">Most bookings in Dhaka are confirmed with a technician within 60 minutes.</p></div>
+      <div class="feature-card"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i><h3 data-i18n="why_4_title">Service warranty</h3><p data-i18n="why_4_desc">7 to 30 days of free re-visit if the same issue reoccurs, depending on the service.</p></div>
+      <div class="feature-card"><i class="fa-solid fa-wallet" aria-hidden="true"></i><h3 data-i18n="why_5_title">Mobile banking ready</h3><p data-i18n="why_5_desc">Pay however you like — cash on completion, bKash, Nagad, Rocket or card.</p></div>
+      <div class="feature-card"><i class="fa-solid fa-headset" aria-hidden="true"></i><h3 data-i18n="why_6_title">24/7 support</h3><p data-i18n="why_6_desc">Our support line and WhatsApp stay open around the clock for emergencies.</p></div>
+    </div>
+  </section>
+
+  <!-- ============================ SERVICE AREAS + MAP ============================ -->
+  <section class="section section--alt" id="areas">
+    <div class="container">
+      <div class="section__head">
+        <p class="section__kicker" data-i18n="areas_kicker">Coverage</p>
+        <h2 data-i18n="areas_title">Where we currently work</h2>
+        <p data-i18n="areas_sub">Live in the metro areas below today, with more districts opening every quarter.</p>
+      </div>
+      <div class="areas-layout">
+        <div>
+          <ul id="areas-list"><!-- rendered by main.js --></ul>
+          <p class="areas-more"><i class="fa-solid fa-ellipsis" aria-hidden="true"></i>&nbsp;<span data-i18n="areas_more">More cities coming soon</span></p>
+        </div>
+        <div>
+          <div class="map-frame">
+            <iframe
+              src="https://www.google.com/maps?q=House+12,+Road+5,+Dhanmondi,+Dhaka+1209,+Bangladesh&output=embed"
+              loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+              title="GhorSheba head office location on Google Maps"></iframe>
+          </div>
+          <div class="office-card">
+            <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+            <div>
+              <strong data-i18n="areas_office_label">Head office</strong>
+              <span>House 12, Road 5, Dhanmondi, Dhaka&nbsp;1209, Bangladesh</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ GALLERY ============================ -->
+  <section class="section" id="gallery">
+    <div class="container">
+      <div class="section__head section__head--center">
+        <p class="section__kicker" data-i18n="gallery_kicker">Recent work</p>
+        <h2 data-i18n="gallery_title">A look at jobs we've completed</h2>
+        <p data-i18n="gallery_sub">A small sample from our technicians' recent visits across Dhaka and Chattogram.</p>
+      </div>
+      <div class="gallery-grid" id="gallery-grid"><!-- rendered by main.js --></div>
+    </div>
+  </section>
+
+  <!-- ============================ TESTIMONIALS ============================ -->
+  <section class="section section--alt" id="reviews">
+    <div class="container">
+      <div class="section__head section__head--center">
+        <p class="section__kicker" data-i18n="reviews_kicker">Customer stories</p>
+        <h2 data-i18n="reviews_title">What customers are saying</h2>
+        <p data-i18n="reviews_sub">Ratings and comments collected after each completed booking.</p>
+      </div>
+      <div class="testimonial-wrap">
+        <div class="testimonial-viewport">
+          <div id="testimonial-track"><!-- rendered by main.js --></div>
+        </div>
+        <div class="testimonial-controls">
+          <button class="testimonial-nav" id="testimonial-prev" data-i18n-aria-label="reviews_prev" aria-label="Previous review"><i class="fa-solid fa-chevron-left"></i></button>
+          <div id="testimonial-dots"></div>
+          <button class="testimonial-nav" id="testimonial-next" data-i18n-aria-label="reviews_next" aria-label="Next review"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ FAQ ============================ -->
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="section__head section__head--center">
+        <p class="section__kicker" data-i18n="faq_kicker">Good to know</p>
+        <h2 data-i18n="faq_title">Frequently asked questions</h2>
+        <p data-i18n="faq_sub">Still unsure about something? Send us a message and we'll get back within the day.</p>
+      </div>
+      <div class="faq-list" id="faq-list"><!-- rendered by main.js --></div>
+    </div>
+  </section>
+
+  <!-- ============================ BOOKING ============================ -->
+  <section class="section section--alt" id="booking">
+    <div class="container">
+      <div class="section__head">
+        <p class="section__kicker" data-i18n="booking_kicker">Book now</p>
+        <h2 data-i18n="booking_title">Tell us what you need</h2>
+        <p data-i18n="booking_sub">This demo form saves your booking in your browser's local storage — no server or account required — so you can see it appear instantly below.</p>
+      </div>
+
+      <div class="booking-layout">
+        <form class="booking-form" id="booking-form" novalidate>
+          <div class="booking-form__row">
+            <div class="field">
+              <label for="booking-name" data-i18n="form_name_label">Full name *</label>
+              <input type="text" id="booking-name" required data-i18n-placeholder="form_name_placeholder" />
+            </div>
+            <div class="field">
+              <label for="booking-phone" data-i18n="form_phone_label">Phone number *</label>
+              <input type="tel" id="booking-phone" pattern="[0-9+ ]{10,15}" required data-i18n-placeholder="form_phone_placeholder" />
+            </div>
+          </div>
+
+          <div class="booking-form__row">
+            <div class="field">
+              <label for="booking-service" data-i18n="form_service_label">Service needed *</label>
+              <select id="booking-service" required></select>
+            </div>
+            <div class="field">
+              <label for="booking-area" data-i18n="form_area_label">City / area *</label>
+              <select id="booking-area" required></select>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="booking-address" data-i18n="form_address_label">Full address *</label>
+            <input type="text" id="booking-address" required data-i18n-placeholder="form_address_placeholder" />
+          </div>
+
+          <div class="booking-form__row">
+            <div class="field">
+              <label for="booking-date" data-i18n="form_date_label">Preferred date *</label>
+              <input type="date" id="booking-date" required />
+            </div>
+            <div class="field">
+              <label for="booking-time" data-i18n="form_time_label">Preferred time *</label>
+              <input type="time" id="booking-time" required />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="booking-notes" data-i18n="form_notes_label">Additional notes (optional)</label>
+            <textarea id="booking-notes" rows="3" data-i18n-placeholder="form_notes_placeholder"></textarea>
+          </div>
+
+          <button class="btn btn--primary btn--block" type="submit" data-i18n="form_submit_btn">Confirm booking</button>
+          <p class="booking-form__note" data-i18n="form_required_note">Fields marked * are required.</p>
+        </form>
+
+        <aside class="recent-bookings">
+          <div class="recent-bookings__head">
+            <h3 data-i18n="recent_title">Your recent bookings (this device)</h3>
+            <button id="recent-clear-btn" data-i18n="recent_clear_btn">Clear demo data</button>
+          </div>
+          <p id="recent-bookings-empty" data-i18n="recent_empty">No bookings yet — submit the form above and it will appear here instantly.</p>
+          <ul id="recent-bookings-list"></ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ CONTACT ============================ -->
+  <section class="section section--navy" id="contact">
+    <div class="container">
+      <div class="section__head section__head--center" style="margin-inline:auto;">
+        <p class="section__kicker" data-i18n="contact_kicker">Reach us</p>
+        <h2 data-i18n="contact_title">Talk to a real person</h2>
+        <p data-i18n="contact_sub">Call, WhatsApp or visit — whichever is easiest for you.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <i class="fa-solid fa-phone" aria-hidden="true"></i>
+          <strong data-i18n="contact_phone_label">Hotline</strong>
+          <a href="tel:+8801712345678">+880 1712-345678</a>
+        </div>
+        <div class="contact-card">
+          <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+          <strong data-i18n="contact_whatsapp_label">WhatsApp</strong>
+          <a href="https://wa.me/8801712345678" target="_blank" rel="noopener">+880 1712-345678</a>
+        </div>
+        <div class="contact-card">
+          <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+          <strong data-i18n="contact_email_label">Email</strong>
+          <a href="mailto:hello@ghorsheba.com.bd">hello@ghorsheba.com.bd</a>
+        </div>
+        <div class="contact-card">
+          <i class="fa-solid fa-clock" aria-hidden="true"></i>
+          <strong data-i18n="contact_hours_label">Support hours</strong>
+          <span data-i18n="contact_hours_value">24/7, every day of the week</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================ FOOTER ============================ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="#top">
+          <span class="brand__mark" aria-hidden="true"><i class="fa-solid fa-house-chimney"></i></span>
+          <span class="brand__name" data-i18n="brand_name">GhorSheba</span>
+        </a>
+        <p data-i18n="footer_tagline">A demonstration home-services platform for Bangladesh, built as a front-end portfolio project.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer_services_title">Services</h4>
+        <ul>
+          <li><a href="#services">AC · Electrician · Plumber</a></li>
+          <li><a href="#services">Cleaning · Pest control</a></li>
+          <li><a href="#services">Interior · Painting</a></li>
+          <li><a href="#services">CCTV · Solar · Moving</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer_company_title">Company</h4>
+        <ul>
+          <li><a href="#how" data-i18n="footer_company_about">About this project</a></li>
+          <li><a href="#faq" data-i18n="footer_company_faq">FAQ</a></li>
+          <li><a href="#contact" data-i18n="footer_company_contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer_legal_title">Legal</h4>
+        <ul>
+          <li><span data-i18n="footer_legal_terms">Terms of service</span></li>
+          <li><span data-i18n="footer_legal_privacy">Privacy policy</span></li>
+          <li><span data-i18n="footer_legal_note">Demo content — not a registered business.</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="footer-year">2026</span> <span data-i18n="brand_name">GhorSheba</span> — <span data-i18n="footer_rights">All rights reserved.</span></span>
+      <span data-i18n="footer_built_with">Built with HTML, CSS &amp; vanilla JavaScript</span>
+      <a class="back-to-top" href="#top"><span data-i18n="back_to_top">Back to top</span> <i class="fa-solid fa-arrow-up" aria-hidden="true"></i></a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/i18n.js"></script>
+<script src="js/data-service.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

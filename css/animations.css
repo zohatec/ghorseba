@@ -1,0 +1,108 @@
+/* =================================================================
+   animations.css
+   One orchestrated hero entrance + a single restrained scroll-reveal
+   utility, plus the interaction-triggered motion for components that
+   respond to what the person does (accordion, toast, carousel, tabs).
+   All motion is skipped for prefers-reduced-motion.
+================================================================= */
+
+@media (prefers-reduced-motion: no-preference) {
+
+  /* ---------- Hero entrance (one orchestrated moment) ---------- */
+  .hero__eyebrow,
+  .hero__title span,
+  .hero__subtitle,
+  .hero__actions,
+  .hero__trust,
+  .hero__visual {
+    opacity: 0;
+    transform: translateY(18px);
+    animation: hero-rise 0.7s cubic-bezier(.22,.68,.32,1) forwards;
+  }
+  .hero__eyebrow   { animation-delay: .05s; }
+  .hero__title span:nth-child(1) { animation-delay: .12s; }
+  .hero__title span:nth-child(2) { animation-delay: .22s; }
+  .hero__subtitle  { animation-delay: .34s; }
+  .hero__actions   { animation-delay: .44s; }
+  .hero__trust     { animation-delay: .52s; }
+  .hero__visual    { animation-delay: .28s; transform: translateY(24px) scale(.98); }
+
+  @keyframes hero-rise {
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  .hero__stat-badge {
+    opacity: 0;
+    animation: badge-pop .5s cubic-bezier(.22,.9,.4,1.2) forwards;
+    animation-delay: .8s;
+  }
+  @keyframes badge-pop {
+    from { opacity: 0; transform: translateY(10px) scale(.9); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  /* ---------- Scroll reveal (single utility, used sparingly) ---------- */
+  .reveal {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity .6s ease, transform .6s cubic-bezier(.22,.68,.32,1);
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Always-on (non-motion-sensitive) transitions for interactive parts */
+
+.faq-item__a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .35s ease;
+}
+
+.faq-item__q i {
+  transition: transform .3s ease;
+}
+.faq-item.is-open .faq-item__q i {
+  transform: rotate(45deg);
+}
+
+#testimonial-track {
+  transition: transform .5s cubic-bezier(.22,.68,.32,1);
+}
+
+.toast {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity .3s ease, transform .3s ease;
+}
+.toast.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.service-card {
+  transition: border-color .25s ease, transform .25s ease;
+}
+.service-card:hover {
+  transform: translateY(-4px);
+}
+
+.btn {
+  transition: background-color .2s ease, color .2s ease, border-color .2s ease, transform .15s ease;
+}
+.btn:active {
+  transform: scale(.97);
+}
+
+.nav-toggle__bar {
+  transition: transform .3s ease, opacity .2s ease;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+.spinner {
+  animation: spin 1s linear infinite;
+}
