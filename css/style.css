@@ -135,10 +135,20 @@ p { margin: 0; }
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(245, 246, 242, 0.9);
-  backdrop-filter: blur(10px);
   border-bottom: 1px solid transparent;
   transition: border-color .25s ease, box-shadow .25s ease;
+}
+/* backdrop-filter lives on a pseudo-element: putting it on the header itself
+   would make the header the containing block for the position:fixed mobile
+   menu, shrinking the menu to the header's height. */
+.site-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: rgba(245, 246, 242, 0.9);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
 }
 .site-header.is-scrolled {
   border-color: var(--line);
@@ -168,7 +178,6 @@ p { margin: 0; }
   align-items: center;
   gap: 28px;
 }
-.nav__panel { display: contents; }
 .nav__links { display: flex; gap: 24px; }
 .nav__links a {
   font-size: 0.94rem;
@@ -826,23 +835,49 @@ p { margin: 0; }
 }
 
 @media (max-width: 760px) {
-  .nav__links { display: none; }
   .nav-toggle { display: flex; }
   .nav__actions .btn--primary { display: none; }
 
-  #primary-nav.is-open {
+  /* #primary-nav is always display:flex now — visibility is controlled with
+     transform/opacity/visibility instead of toggling `display`, which is
+     the reliable, standard pattern for slide-in mobile menus (toggling
+     `display` on an element that also carries `display:contents` at other
+     breakpoints is a known source of repaint bugs on mobile Safari/WebViews). */
+  #primary-nav {
     position: fixed;
     inset: 76px 0 0 0;
+    z-index: 200;
     background: var(--canvas);
     padding: 24px;
     display: flex;
     flex-direction: column;
-    gap: 22px;
+    gap: 20px;
+    font-size: 1.1rem;
+    /* overflow-y:auto alone forces overflow-x:auto too, which caused a stray
+       scrollbar; clip the x-axis and only scroll vertically if truly needed. */
+    overflow-x: hidden;
     overflow-y: auto;
+    overscroll-behavior: contain;
+    padding-bottom: calc(24px + env(safe-area-inset-bottom, 0px));
+    transform: translateX(100%);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: transform .3s ease, opacity .25s ease, visibility 0s linear .3s;
   }
-  #primary-nav.is-open .nav__links { display: flex; flex-direction: column; gap: 18px; font-size: 1.1rem; }
-  #primary-nav.is-open .nav__actions { flex-direction: column; align-items: stretch; }
-  #primary-nav.is-open .nav__actions .btn--primary { display: inline-flex; }
+  #primary-nav.is-open {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transition: transform .3s ease, opacity .25s ease, visibility 0s linear 0s;
+  }
+  #primary-nav a {
+    display: block;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  #primary-nav a::after { display: none; }
   body.nav-open { overflow: hidden; }
 
   .hero { padding: 36px 0 60px; }
